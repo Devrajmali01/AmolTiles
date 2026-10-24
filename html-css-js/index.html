@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amol Tiles & Granites Jath | अमोल टाईल्स, जत</title>
+  
+  <!-- Google Fonts for English & Devanagari (Marathi/Hindi) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="lang-mr">
+
+  <!-- Top Utility Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-bar-left">
+        <span class="badge">✨</span>
+        <span id="top-title">अधिकृत टाईल्स व सॅनिटरीवेअर डीलर • जत (सांगली)</span>
+      </div>
+      <div class="top-bar-right">
+        <!-- Language Switcher -->
+        <div class="lang-switcher">
+          <button class="lang-btn" onclick="toggleLangDropdown()">
+            <span id="current-lang-text">🚩 मराठी</span>
+            <span class="arrow">▼</span>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown">
+            <button onclick="setLanguage('mr')">🚩 मराठी (Marathi)</button>
+            <button onclick="setLanguage('hi')">🇮🇳 हिंदी (Hindi)</button>
+            <button onclick="setLanguage('en')">🌐 English</button>
+          </div>
+        </div>
+
+        <button class="vcard-link-btn" onclick="openVisitingCard()">📇 <span id="btn-vcard-text">व्हिजिटिंग कार्ड</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="main-header">
+    <div class="container header-container">
+      <div class="logo-group">
+        <div class="logo-box">A</div>
+        <div class="logo-text">
+          <h1 id="brand-title">AMOL TILES, JATH</h1>
+          <p id="brand-tagline">टाईल्स, ग्रॅनाइट्स, मार्बल, कडप्पा, सॅनिटरीवेअर व फिनोलेक्स प्लंबिंग</p>
+        </div>
+      </div>
+
+      <div class="search-box">
+        <input type="text" id="tile-search" placeholder="टाईल्स, ग्रॅनाइट्स, साईझ शोधा..." oninput="filterTiles()">
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs">
+      <div class="container nav-tabs-container">
+        <button class="nav-item active" onclick="switchTab('catalogues')" id="tab-catalogues">टाईल्स कॅटलॉग</button>
+        <button class="nav-item" onclick="switchTab('visualizer')" id="tab-visualizer">३D रूम सिम्युलेटर</button>
+        <button class="nav-item" onclick="switchTab('directory')" id="tab-directory">टाईल डायरेक्टरी</button>
+        <button class="nav-item" onclick="switchTab('showroom')" id="tab-showroom">शोरूम लोकेशन</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="hero-text">
+          <span class="hero-badge" id="hero-badge">मारबिटो • वारमोरा • फिनोलेक्स • युरेका अधिकृत डीलर - जत</span>
+          <h2 id="hero-title">अमोल टाईल्स आणि ग्रॅनाइट्स जत</h2>
+          <p id="hero-desc">सुंदर आणि मजबूत घरासाठी प्रीमियम व्हिट्रिफाइड स्लॅब्स, नॅचरल ग्रॅनाइट्स, इटालियन मार्बल आणि सॅनिटरीवेअर कलेक्शन.</p>
+
+          <!-- Contact Cards -->
+          <div class="proprietors-grid">
+            <div class="prop-card ajit">
+              <span class="dot yellow-dot"></span>
+              <div>
+                <strong id="prop-ajit-label">प्रो. अजित शिंदे:</strong>
+                <a href="tel:9822090345" class="phone-link">📞 9822090345</a>
+              </div>
+            </div>
+
+            <div class="prop-card niraj">
+              <span class="dot green-dot"></span>
+              <div>
+                <strong id="prop-niraj-label">प्रो. निरज शिंदे:</strong>
+                <a href="tel:9822309345" class="phone-link">📞 9822309345</a>
+                <a href="https://wa.me/919822309345" target="_blank" class="wa-btn">💬 WhatsApp</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-buttons">
+            <button class="btn btn-primary" onclick="switchTab('visualizer')" id="btn-hero-visualizer">३D रूममध्ये पहा</button>
+            <button class="btn btn-secondary" onclick="openVisitingCard()" id="btn-hero-card">📇 डिजिटल व्हिजिटिंग कार्ड</button>
+          </div>
+        </div>
+
+        <div class="hero-image-wrapper">
+          <img src="/src/assets/images/regenerated_image_1787246045342.png" alt="Amol Tiles Jath Showroom" class="hero-img">
+        </div>
+      </section>
+
+      <!-- TAB 1: 3D Room Visualizer Section -->
+      <section id="section-visualizer" class="tab-section">
+        <div class="section-header">
+          <h3 id="vis-title">३D रूम व्हिज्युलायझर</h3>
+          <p id="vis-subtitle">वेगवेगळ्या खोल्यांमध्ये टाईल्स व ग्रॅनाइट निवडून लाईव्ह लूक पहा.</p>
+        </div>
+
+        <div class="visualizer-container">
+          <div class="preview-stage">
+            <img id="room-canvas-image" src="/src/assets/images/black_marble_living_room_1786558171845.jpg" alt="Room Simulator">
+            <div class="room-label" id="current-room-name">लिव्हिंग रूम (Living Room Floor)</div>
+          </div>
+
+          <div class="visualizer-controls">
+            <h4 id="ctrl-room-select-title">रूमचा प्रकार निवडा:</h4>
+            <div class="preset-buttons">
+              <button class="pill-btn active" onclick="setRoomScene('living')">लिव्हिंग रूम</button>
+              <button class="pill-btn" onclick="setRoomScene('kitchen')">किचन ओटा</button>
+              <button class="pill-btn" onclick="setRoomScene('bath')">बाथरूम</button>
+              <button class="pill-btn" onclick="setRoomScene('hall')">हॉल व पायऱ्या</button>
+            </div>
+
+            <h4 id="ctrl-tile-select-title" style="margin-top: 15px;">अमोल टाईल्स फर्शी निवड:</h4>
+            <div class="tile-swatches">
+              <button class="swatch-btn" onclick="applyFloorTile('black')">⬛ Z-Black Granite</button>
+              <button class="swatch-btn" onclick="applyFloorTile('pearl')">🔘 Pearl Black</button>
+              <button class="swatch-btn" onclick="applyFloorTile('statuario')">🏛️ Statuario Marble</button>
+              <button class="swatch-btn" onclick="applyFloorTile('wood')">🪵 Wood Plank</button>
+              <button class="swatch-btn" onclick="applyFloorTile('crema')">🍦 Warmora Crema</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: Catalogues Grid -->
+      <section id="section-catalogues" class="tab-section active">
+        <div class="section-header">
+          <h3 id="cat-title">अधिकृत ब्रँड ई-कॅटलॉग २०२६</h3>
+          <p id="cat-subtitle">उच्च गुणवत्तेचे ई-कॅटलॉग पहा आणि संपूर्ण व्हरायटी जाणून घ्या.</p>
+        </div>
+
+        <div class="cards-grid">
+          <div class="product-card">
+            <img src="/src/assets/images/regenerated_image_1787246045342.png" alt="GVT Slabs" class="card-img">
+            <div class="card-body">
+              <span class="card-tag">800x1600 mm</span>
+              <h4>Marbito Grand GVT Slabs</h4>
+              <p>प्रीमियम व्हिट्रिफाइड स्लॅब्स फॉर हॉल, लिव्हिंग रूम व बंगलो फ्लोअरिंग.</p>
+              <button class="btn btn-outline" onclick="switchTab('visualizer')">३D मध्ये पहा</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="/src/assets/images/black_marble_living_room_1786558171845.jpg" alt="Granite Slabs" class="card-img">
+            <div class="card-body">
+              <span class="card-tag">Custom Slabs</span>
+              <h4>Natural Granite & Marble Collection</h4>
+              <p>Z Black, Pearl Black, Steel Gray, Silvassa Red आणि Italian Marbles.</p>
+              <button class="btn btn-outline" onclick="switchTab('visualizer')">३D मध्ये पहा</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="/src/assets/images/amol_tiles_hero_1784971055050.jpg" alt="Plumbing and Sinks" class="card-img">
+            <div class="card-body">
+              <span class="card-tag">Finolex & Eureka</span>
+              <h4>Sanitaryware & Plumbing Fittings</h4>
+              <p>फिनोलेक्स पाईप्स, रेनबो वॉटर टँक्स व स्टेनलेस स्टील किचन सिंक्स.</p>
+              <button class="btn btn-outline" onclick="openVisitingCard()">चौकशी करा</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: Tile Directory -->
+      <section id="section-directory" class="tab-section">
+        <div class="section-header">
+          <h3 id="dir-title">टाईल्स व ग्रॅनाइट डायरेक्टरी</h3>
+          <p id="dir-subtitle">सर्व उपलब्ध साईजेस, फिनिश आणि डिझाइन्सची संपूर्ण यादी.</p>
+        </div>
+
+        <div class="cards-grid" id="tile-directory-grid">
+          <div class="product-card">
+            <img src="/src/assets/images/black_marble_living_room_1786558171845.jpg" alt="Z Black Granite" class="card-img">
+            <div class="card-body">
+              <span class="card-tag">Natural Granite Slab</span>
+              <h4>Z-Black Premium Granite</h4>
+              <p>किचन ओटा, पायऱ्या, खिडकी फ्रेम व मोल्डिंगसाठी सर्वोत्तम जड व मजबूत ग्रॅनाइट.</p>
+              <button class="btn btn-outline" onclick="openVisitingCard()">📞 दर चौकशी करा</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="/src/assets/images/regenerated_image_1787246045342.png" alt="Pearl Black Granite" class="card-img">
+            <div class="card-body">
+              <span class="card-tag">High Gloss Slabs</span>
+              <h4>Pearl Black & Royal Gold Granite</h4>
+              <p>लक्झरी ग्लॉसी पॉलिश फिनिश, डाग न पडणारा नॅचरल स्टोन.</p>
+              <button class="btn btn-outline" onclick="openVisitingCard()">📞 दर चौकशी करा</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="/src/assets/images/amol_catalog_cover_wall_1784971081615.jpg" alt="Digital Wall Tiles" class="card-img">
+            <div class="card-body">
+              <span class="card-tag">300x600 mm (12x24 inch)</span>
+              <h4>Marbito High Gloss Wall Tiles</h4>
+              <p>किचन आणि बाथरूमच्या भिंतींसाठी आकर्षक हाय-डेफिनिशन डिजिटल टाईल्स.</p>
+              <button class="btn btn-outline" onclick="openVisitingCard()">📞 दर चौकशी करा</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="/src/assets/images/amol_catalog_cover_outdoor_1784971094848.jpg" alt="Heavy Duty Parking Tiles" class="card-img">
+            <div class="card-body">
+              <span class="card-tag">400x400 mm (16mm Heavy Duty)</span>
+              <h4>Outdoor & Parking Tiles</h4>
+              <p>पार्किंग, पोर्च, गच्ची व बागेच्या रस्त्यांसाठी अँटी-स्किड हेवी ड्युटी फर्शी.</p>
+              <button class="btn btn-outline" onclick="openVisitingCard()">📞 दर चौकशी करा</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: Showroom Location -->
+      <section id="section-showroom" class="tab-section">
+        <div class="section-header">
+          <h3 id="show-title">अमोल टाईल्स शोरूम आणि स्टॉक यार्ड - जत</h3>
+          <p id="show-subtitle">सांगली रोड, जत येथील भव्य शोरूमला प्रत्यक्ष भेट द्या.</p>
+        </div>
+
+        <div class="showroom-details-grid">
+          <div class="showroom-info-card">
+            <h4>पत्ता व संपर्क</h4>
+            <p><strong>पत्ता:</strong> सांगली-विजापूर रोड, नवीन बस स्टँडजवळ, जत, जि. सांगली (महाराष्ट्र) - ४१६४०४</p>
+            <p><strong>वेळ:</strong> सकाळी ९:०० ते रात्री ८:३० (सोमवार ते शनिवार)</p>
+            <p><strong>प्रो. अजित शिंदे:</strong> 9822090345</p>
+            <p><strong>प्रो. निरज शिंदे:</strong> 9822309345</p>
+            <div style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=Jath+Sangli" target="_blank" class="btn btn-primary">🗺️ Google Maps वर पहा</a>
+            </div>
+          </div>
+          <div class="showroom-img-card">
+            <img src="/src/assets/images/regenerated_image_1787245810395.png" alt="Amol Tiles Jath Store" class="store-img">
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Digital Visiting Card Modal -->
+  <div id="vcard-modal" class="modal-backdrop" onclick="closeVisitingCard(event)">
+    <div class="vcard-modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeVisitingCard(event)">✕</button>
+      
+      <div class="vcard-card">
+        <div class="vcard-header">
+          <div class="vcard-logo">A</div>
+          <div>
+            <h3>AMOL TILES, JATH</h3>
+            <p class="vcard-sub">सांगली रोड, जत • प्रो. शिंदे ब्रदर्स</p>
+          </div>
+        </div>
+
+        <div class="vcard-proprietors">
+          <div class="vcard-person">
+            <span class="name">प्रो. अजित शिंदे</span>
+            <a href="tel:9822090345" class="phone">📞 9822090345</a>
+          </div>
+          <div class="vcard-person">
+            <span class="name">प्रो. निरज शिंदे</span>
+            <a href="tel:9822309345" class="phone">📞 9822309345</a>
+          </div>
+        </div>
+
+        <!-- Interactive QR Code Generator Box -->
+        <div class="vcard-qr-box">
+          <div class="qr-box-header">
+            <span class="qr-title">📱 Scan & Save Contact (QR कोड)</span>
+            <button class="btn-qr-download" onclick="downloadQRCode()">💾 Save QR</button>
+          </div>
+
+          <!-- QR Mode Switcher -->
+          <div class="qr-mode-buttons">
+            <button class="qr-mode-btn active" id="qrmode-vcard" onclick="setHtmlQrMode('vcard')">📇 vCard</button>
+            <button class="qr-mode-btn" id="qrmode-whatsapp" onclick="setHtmlQrMode('whatsapp')">💬 WhatsApp</button>
+            <button class="qr-mode-btn" id="qrmode-call" onclick="setHtmlQrMode('call')">📞 Call</button>
+            <button class="qr-mode-btn" id="qrmode-maps" onclick="setHtmlQrMode('maps')">🗺️ Maps</button>
+          </div>
+
+          <div class="qr-image-container">
+            <img id="html-qr-image" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3AShinde%3BAjit+%26+Niraj%0AFN%3AAmol+Tiles+%26+Granites+Jath%0AORG%3AAmol+Tiles+%26+Granites%0ATEL%3BTYPE%3DCELL%3A%2B919822090345%0ATEL%3BTYPE%3DCELL%3A%2B919822309345%0AADR%3BTYPE%3DWORK%3A%3B%3BSatara+Road%3BJath%3BMaharashtra%3B416404%3BIndia%0AEND%3AVCARD" alt="Amol Tiles QR Code">
+            <div class="qr-badge">AMOL TILES JATH</div>
+          </div>
+
+          <div class="qr-actions">
+            <button class="btn btn-primary btn-save-contact" onclick="downloadVCardFromJs()">
+              👤 Save Contact to Phone (.vcf)
+            </button>
+            <button class="btn btn-secondary" onclick="copyDealerDetails()">
+              📋 Copy Details
+            </button>
+          </div>
+        </div>
+
+        <div class="vcard-body">
+          <p><strong>अधिकृत डीलर:</strong> मारबिटो, वारमोरा, सिग्नोव्हा टाईल्स, फिनोलेक्स पाईप्स व रेनबो वॉटर टँक्स.</p>
+          <p><strong>पत्ता:</strong> सांगली-विजापूर रोड, नवीन बस स्टँडजवळ, जत, जि. सांगली - ४१६४०४</p>
+        </div>
+
+        <div class="vcard-actions">
+          <a href="tel:9822090345" class="btn btn-primary">📞 अजित: 9822090345</a>
+          <a href="tel:9822309345" class="btn btn-primary">📞 निरज: 9822309345</a>
+          <a href="https://wa.me/919822309345" target="_blank" class="btn btn-wa">💬 WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "Amol Tiles - Catalogues & Tile Visualizer",
+  "description": "Digital product catalog, tile explorer, VIP appointment booking, multi-channel customer notification system, and 24/7 customer support for Amol Tiles, Jath.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
